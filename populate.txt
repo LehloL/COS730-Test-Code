@@ -1,0 +1,115 @@
+﻿insert into person(id,firstname, surname)
+values(100, 'Hlengekile', 'Raphiri');
+
+insert into person(id,firstname, surname)
+values(200, 'John', 'Tleane');
+
+insert into person(id,firstname, surname)
+values(300, 'Victor', 'Raphiri');
+
+insert into person(id,firstname, surname)
+values(400, 'Tsebo', 'Raphiri');
+
+insert into person(id,firstname, surname)
+values(500, 'Joseph', 'Mokoena');
+
+insert into person(id,firstname, surname)
+values(600, 'Thuli', 'Madonsela');
+
+commit;
+
+select * from person;
+
+
+insert into lifecyclestate(id,bibtexentry, percentagecompleted, publicationdate, state)
+values(100,  'Authentication on the cloud1', 90, '03/01/16', 'Published');
+
+insert into lifecyclestate(id,bibtexentry, percentagecompleted, publicationdate, state)
+values(200,  'Authentication on the cloud2', 90, '03/02/16', 'Rejected');
+
+insert into lifecyclestate(id,bibtexentry, percentagecompleted, publicationdate, state)
+values(300,  'Authentication on the cloud3', 90, '03/03/16', 'Submitted');
+insert into lifecyclestate(id,bibtexentry, percentagecompleted, publicationdate, state)
+values(500,  'Authentication on the cloud2', 90, '03/05/16', 'In Progres');
+insert into lifecyclestate(id,bibtexentry, percentagecompleted, publicationdate, state)
+values(600,  'Authentication on the cloud5', 90, '03/06/16', 'In Progres');
+
+
+select * from  lifecyclestate;
+
+
+insert into publicationtarget(id,name, website)
+values(100,  'IEEEE','www.ieee.com');
+insert into publicationtarget(id,name, website)
+values(200,  'CAM','www.cam.com');
+insert into publicationtarget(id,name, website)
+values(300,  'springer','www.springer.com');
+insert into publicationtarget(id,name, website)
+values(400,  'liever','www.liever.com');
+insert into publicationtarget(id,name, website)
+values(500,  'mcmillin','www.mcmillin.com');
+
+insert into publicationtarget(id,name, website)
+values(600,  'mcmillin','Google');
+
+select * from publicationtarget;
+
+insert into publicationtype(id,name)
+values(2,  'VIC_PAPERS');
+
+insert into publicationtype(id,name)
+values(100,  'Journal');
+insert into publicationtype(id,name)
+values(200,  'Book');
+insert into publicationtype(id,name)
+values(300,  'Conference');
+
+
+insert into publicationtype(id,name)
+values(500,  'Google');
+
+
+commit;
+
+select * from publicationtype;
+
+insert into publicationdetailstoperson(id,person,publicationdetails) 
+values (100, 100,100);
+
+
+commit;
+
+select * from publicationdetailstoperson;
+
+insert into publicationstate(id,date,reason) 
+values (100, '03/01/2016','In Progress: Waiting on final experiment results');
+
+commit;
+
+select * from publicationstate;
+
+insert into publicationstatetolifecyclestate(id,lifecyclestate,publicationstate) 
+values (100, 300,100);
+
+commit;
+
+select * from publicationstatetolifecyclestate;
+
+insert into publicationtypestate(id,accredationpoints,deactivationreason, effectivedate,state) 
+values (100, 5.6,'TestReason', '03/01/2016', 'TestState');
+
+commit;
+
+select * from publicationtypestate;
+
+insert into publicationtypetopublicationtypestate(id,publicationtype,publicationtypestate) 
+values (100, 100,100);
+
+commit;
+
+select * from publicationtypetopublicationtypestate;
+
+insert into publicationdetails
+values (100,'2016-03-01','TestPaper');
+
+select * from publicationdetails;
